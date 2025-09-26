@@ -1,2 +1,2 @@
 # CSS-385
-Repository CSS 385 assignments
+Repository for CSS 385 assignments
