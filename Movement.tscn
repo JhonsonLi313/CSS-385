@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://b82uoqtl77pce"]
+
+[ext_resource type="PackedScene" uid="uid://ceomi4kf23uda" path="res://platforms.tscn" id="1_23xw5"]
+[ext_resource type="Script" uid="uid://bayp81j0vh576" path="res://movement.gd" id="1_hcjoj"]
+[ext_resource type="Texture2D" uid="uid://dvupdsw5grgtu" path="res://icon.svg" id="3_fnv8k"]
+
+[sub_resource type="GDScript" id="GDScript_vcyby"]
+resource_name = "PlayerMovement"
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+var jumps = 0
+const MAX_JUMP = 2
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	if is_on_floor():
+		jumps = 0
+	if Input.is_action_just_pressed(\"ui_jump\") and jumps < MAX_JUMP:
+		velocity.y = JUMP_VELOCITY
+		jumps += 1
+	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ljl2"]
+size = Vector2(125, 126)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(100, 577)
+script = ExtResource("1_hcjoj")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_23xw5")]
+position = Vector2(-37, -12)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_23xw5")]
+position = Vector2(257, -73)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_23xw5")]
+position = Vector2(549, -137)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_23xw5")]
+position = Vector2(841, -223)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_vcyby")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(59, -168)
+texture = ExtResource("3_fnv8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(59.5, -167)
+shape = SubResource("RectangleShape2D_6ljl2")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -79.0
+offset_top = -559.0
+offset_right = 101.0
+offset_bottom = -489.0
+text = "Quit To Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_quit_to_menu_pressed"]

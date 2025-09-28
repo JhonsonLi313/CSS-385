@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbw4wbnkipppd"]
+
+[ext_resource type="FontFile" uid="uid://d0ne8xoc2is2a" path="res://Scabber-q2Mn0.ttf" id="1_r314q"]
+[ext_resource type="Script" uid="uid://c3g765ypinl20" path="res://options.gd" id="1_yia4p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yia4p"]
+bg_color = Color(0.32274348, 0.6742975, 0.58423704, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 7
+shadow_offset = Vector2(0, 4)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yia4p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.75
+offset_top = -143.0
+offset_right = 213.75
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Audio Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.32071057, 0.318954, 0.30374902, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_yia4p")
+text = "Audio"
+
+[node name="Graphics Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.32071057, 0.318954, 0.30374902, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_yia4p")
+text = "Graphics"
+
+[node name="Controls Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.32071057, 0.318954, 0.30374902, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_yia4p")
+text = "Controls"
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.875
+offset_top = 184.0
+offset_right = 106.875
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.32071057, 0.318954, 0.30374902, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_yia4p")
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -251.0
+offset_right = 143.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.91567194, 0.37649003, 0.7029927, 1)
+theme_override_colors/font_shadow_color = Color(0.5238181, 0.14814794, 0.45565802, 0)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_r314q")
+theme_override_font_sizes/font_size = 70
+text = "Options"
+
+[connection signal="pressed" from="VBoxContainer/Audio Button" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Graphics Button" to="." method="_on_graphics_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls Button" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_pressed"]
