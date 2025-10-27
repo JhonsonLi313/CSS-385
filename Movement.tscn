@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://b82uoqtl77pce"]
+
+[ext_resource type="Script" path="res://movement.gd" id="1_hcjoj"]
+[ext_resource type="PackedScene" uid="uid://60jck7iffb6t" path="res://Button.tscn" id="4_ptxpm"]
+[ext_resource type="Texture2D" uid="uid://yn10ehvdeg2y" path="res://Drawbridge.png" id="5_hnpmp"]
+[ext_resource type="PackedScene" uid="uid://be6351cw4i83d" path="res://Character.tscn" id="5_honej"]
+[ext_resource type="PackedScene" uid="uid://c3eeobph8fnk1" path="res://dirtplatform.tscn" id="6_0s656"]
+[ext_resource type="PackedScene" uid="uid://ds707bb82w107" path="res://coin.tscn" id="6_4x6fl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qawjr"]
+size = Vector2(12.75, 187)
+
+[sub_resource type="Animation" id="Animation_gbr2p"]
+resource_name = "Fall Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.56905]
+}
+
+[sub_resource type="Animation" id="Animation_wiy7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00jrn"]
+_data = {
+"Fall Down": SubResource("Animation_gbr2p"),
+"RESET": SubResource("Animation_wiy7s")
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(100, 577)
+script = ExtResource("1_hcjoj")
+
+[node name="Menu Button" type="Button" parent="."]
+offset_left = -79.0
+offset_top = -559.0
+offset_right = 101.0
+offset_bottom = -489.0
+text = "Quit To Menu"
+
+[node name="Button" parent="." instance=ExtResource("4_ptxpm")]
+position = Vector2(105, -35)
+
+[node name="Drawbridge" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Drawbridge"]
+position = Vector2(1054, -101)
+scale = Vector2(3.21, 3.84)
+texture = ExtResource("5_hnpmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawbridge"]
+position = Vector2(1043.63, -120)
+shape = SubResource("RectangleShape2D_qawjr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Drawbridge"]
+libraries = {
+"": SubResource("AnimationLibrary_00jrn")
+}
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_honej")]
+position = Vector2(-26, -81)
+
+[node name="Coin" parent="." instance=ExtResource("6_4x6fl")]
+position = Vector2(258, -77)
+
+[node name="Dirtplatform" parent="." instance=ExtResource("6_0s656")]
+position = Vector2(-50, 22)
+
+[node name="Dirtplatform" parent="Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[connection signal="pressed" from="Menu Button" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_2_body_entered"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]
