@@ -1,2 +1,3 @@
-# CSS-385
-Repository for CSS 385 assignments
+Video demo of save and load mechanic
+
+https://youtu.be/S2eaYza1wAk
