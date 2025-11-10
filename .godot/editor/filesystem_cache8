@@ -1,0 +1,40 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1762752430
+.gitignore.txt::TextFile::-1::1762739350::0::1::::<><>::
+big red circle.png::CompressedTexture2D::3868597552819898802::1762752430::1762752430::1::::<><>::
+Bliss_(Windows_XP).png::CompressedTexture2D::3960803272217724517::1762739957::1762739957::1::::<><>::
+button (1).png::CompressedTexture2D::5491388181098893687::1762739736::1762739737::1::::<><>::
+Button.tscn::PackedScene::8594141463303001099::1762751455::0::1::::<><>::uid://ckicmjml44i68::::res://button (1).png<>uid://c8re1p33jfvj4::::res://buttonpressed (1).png
+buttonpressed (1).png::CompressedTexture2D::7124457760262095963::1762739747::1762739747::1::::<><>::
+Character.tscn::PackedScene::2732926787971090703::1762751455::0::1::::<><>::res://Player.gd<>uid://cram3ytol3uaq::::res://temp-character.png
+Coin (1).png::CompressedTexture2D::2603479582651099509::1762739759::1762739760::1::::<><>::
+coin.gd::GDScript::-1::1762746062::0::1::::<>Area2D<>::
+coin.tscn::PackedScene::4684054702248771120::1762751455::0::1::::<><>::res://coin.gd<>uid://bdde6tf8ymos0::::res://Coin (1).png
+control.gd::GDScript::-1::1762741237::0::1::::<>Control<>::
+control.tscn::PackedScene::882317379844878186::1762751455::0::1::::<><>::res://control.gd<>uid://dmdec2dicin55::::res://controlscreen.png
+controlscreen.png::CompressedTexture2D::8007969170688100462::1762741663::1762741663::1::::<><>::
+dirt platforms.png::CompressedTexture2D::3608259569097056597::1761543329::1762735351::1::::<><>::
+dirtplatform.tscn::PackedScene::6746654445410857722::1762744654::0::1::::<><>::uid://brn4rjfw0v1un::::res://dirt platforms.png
+global.gd::GDScript::-1::1762745204::0::1::::<>Node<>::
+images (1).jpg::CompressedTexture2D::4301346661459700922::1762739799::1762739799::1::::<><>::
+juan.jpg::CompressedTexture2D::1943724602928525916::1762738611::1762738612::1::::<><>::
+level1.1.tscn::PackedScene::4864416499607309543::1762751455::0::1::::<><>::res://level_1.1.gd<>uid://bwov37aclwbjp::::res://Bliss_(Windows_XP).png<>uid://dupciv7iu2nyp::::res://Button.tscn<>uid://be6351cw4i83d::::res://Character.tscn<>uid://b7y8xxjb0ylka::::res://coin.tscn<>uid://c3eeobph8fnk1::::res://dirtplatform.tscn<>uid://cdg716o0c3tj3::::res://Score.tscn
+level1.gd::GDScript::-1::1762751149::0::1::::<>Node2D<>::
+level1.tscn::PackedScene::4759630934346495268::1762752307::0::1::::<><>::res://level1.gd<>uid://dupciv7iu2nyp::::res://Button.tscn<>uid://be6351cw4i83d::::res://Character.tscn<>uid://b7y8xxjb0ylka::::res://coin.tscn<>uid://c3eeobph8fnk1::::res://dirtplatform.tscn<>uid://bwov37aclwbjp::::res://Bliss_(Windows_XP).png<>uid://cdg716o0c3tj3::::res://Score.tscn
+level2.1.tscn::PackedScene::6506137525655824919::1762751455::0::1::::<><>::res://level_2.1.gd<>uid://bwov37aclwbjp::::res://Bliss_(Windows_XP).png<>uid://be6351cw4i83d::::res://Character.tscn<>uid://b7y8xxjb0ylka::::res://coin.tscn<>uid://c3eeobph8fnk1::::res://dirtplatform.tscn<>uid://cdg716o0c3tj3::::res://Score.tscn
+level2.tscn::PackedScene::8835846411464069901::1762751455::0::1::::<><>::res://level_2.gd<>uid://c3eeobph8fnk1::::res://dirtplatform.tscn<>uid://b7y8xxjb0ylka::::res://coin.tscn<>uid://bwov37aclwbjp::::res://Bliss_(Windows_XP).png<>uid://cdg716o0c3tj3::::res://Score.tscn
+level_2.gd::GDScript::-1::1762751101::0::1::::<>Node2D<>::
+main_menu.gd::GDScript::-1::1762742319::0::1::::<>Control<>::
+main_menu.tscn::PackedScene::6912958221529349562::1762751455::0::1::::<><>::res://main_menu.gd<>uid://b2jus0bvsuyji::::res://images (1).jpg
+options.gd::GDScript::-1::1762741720::0::1::::<>Control<>::
+Options.tscn::PackedScene::4890246674941144629::1762744654::0::1::::<><>::res://options.gd<>uid://b2jus0bvsuyji::::res://images (1).jpg
+Player.gd::GDScript::-1::1762750641::0::1::::<>CharacterBody2D<>::
+PlayerData.gd::GDScript::-1::1761543740::0::1::::PlayerData<>Resource<>::
+README.md::TextFile::-1::1759093994::0::1::::<><>::
+level_2.1.gd::GDScript::-1::1762751294::0::1::::<>Node2D<>::
+level_1.1.gd::GDScript::-1::1762751307::0::1::::<>Node2D<>::
+score.gd::GDScript::-1::1762745401::0::1::::<>Control<>::
+Score.tscn::PackedScene::4997785190225509434::1762751455::0::1::::<><>::res://score.gd
+Splashscreen.gd::GDScript::-1::1762740941::0::1::::<>Node2D<>::
+Splashscreen.tscn::PackedScene::8669472279565310231::1762751455::0::1::::<><>::res://Splashscreen.gd<>uid://2xs4iooljwrk::::res://juan.jpg
+temp-character.png::CompressedTexture2D::5966831605938893936::1761543329::1762735351::1::::<><>::
