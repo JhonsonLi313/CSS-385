@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal update_ui(position)
 
 const SPEED = 300.0
+
 const JUMP_VELOCITY = -500.0
 var jumps = 0
 const MAX_JUMP = 2
@@ -10,7 +11,7 @@ const MAX_JUMP = 2
 var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
-	
+
 func _process(delta):
 	if Input.is_action_just_pressed("save"):
 		save()
