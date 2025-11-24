@@ -1,3 +1,7 @@
+AudioStreamPlayer2D
+VideoStreamPlayer
+CanvasLayer
+Node
 Node2D
 Label
 TileMapLayer
@@ -8,7 +12,3 @@ CharacterBody2D
 CollisionShape2D
 Panel
 Area2D
-VisibleOnScreenNotifier2D
-AnimationPlayer
-StaticBody2D
-AnimatedSprite2D

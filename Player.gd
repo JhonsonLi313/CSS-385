@@ -20,6 +20,9 @@ func _process(delta):
 	emit_signal("update_ui", self.position)
 	playerData.UpdatePos(self.position)
 	
+	if Input.is_key_pressed(KEY_SPACE):
+		$JumpSFX.play()
+	
 func on_start_load():
 	self.position = playerData.SavePos
 

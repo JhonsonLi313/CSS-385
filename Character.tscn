@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://be6351cw4i83d"]
+[gd_scene load_steps=5 format=3 uid="uid://be6351cw4i83d"]
 
-
-[ext_resource type="Script" path="res://Player.gd" id="1_l5vs0"]
+[ext_resource type="Script" uid="uid://beo12fabedrgd" path="res://Player.gd" id="1_l5vs0"]
 [ext_resource type="Texture2D" uid="uid://cram3ytol3uaq" path="res://temp-character.png" id="2_gr4if"]
+[ext_resource type="AudioStream" uid="uid://bmjbt6r3wk1s6" path="res://pixel-jump-319167.mp3" id="3_lcuhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2keqv"]
 size = Vector2(100, 100)
@@ -11,7 +11,6 @@ size = Vector2(100, 100)
 script = ExtResource("1_l5vs0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
 texture = ExtResource("2_gr4if")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,5 +20,8 @@ shape = SubResource("RectangleShape2D_2keqv")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(1.43051e-06, 0.5)
 scale = Vector2(5, 5.05)
+
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lcuhw")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
