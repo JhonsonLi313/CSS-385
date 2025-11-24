@@ -3,14 +3,14 @@ extends CharacterBody2D
 signal update_ui(position)
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -800.0
+
+const JUMP_VELOCITY = -500.0
 var jumps = 0
 const MAX_JUMP = 2
 
 var save_file_path = "user://save/"
 var save_file_name = "PlayerSave.tres"
 var playerData = PlayerData.new()
-
 
 func _process(delta):
 	if Input.is_action_just_pressed("save"):
@@ -58,6 +58,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	
+func _on_visible_on_screen_notifier_2d_screen_exited():
 	get_tree().change_scene_to_file("res://level2.tscn")

@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://b82uoqtl77pce"]
+
+[ext_resource type="Script" path="res://movement.gd" id="1_va8iy"]
+[ext_resource type="PackedScene" uid="uid://dupciv7iu2nyp" path="res://Button.tscn" id="2_x11kv"]
+[ext_resource type="PackedScene" uid="uid://be6351cw4i83d" path="res://Character.tscn" id="3_uuy18"]
+[ext_resource type="PackedScene" uid="uid://b7y8xxjb0ylka" path="res://coin.tscn" id="4_hp4t6"]
+[ext_resource type="PackedScene" uid="uid://c3eeobph8fnk1" path="res://dirtplatform.tscn" id="5_l4dql"]
+[ext_resource type="Texture2D" uid="uid://bwov37aclwbjp" path="res://Bliss_(Windows_XP).png" id="6_nwa2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qawjr"]
+size = Vector2(12.75, 187)
+
+[sub_resource type="Animation" id="Animation_gbr2p"]
+resource_name = "Fall Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.56905]
+}
+
+[sub_resource type="Animation" id="Animation_wiy7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00jrn"]
+_data = {
+"Fall Down": SubResource("Animation_gbr2p"),
+"RESET": SubResource("Animation_wiy7s")
+}
+
+[node name="level1" type="Node2D"]
+position = Vector2(100, 577)
+script = ExtResource("1_va8iy")
+
+[node name="Menu Button" type="Button" parent="."]
+offset_left = -79.0
+offset_top = -559.0
+offset_right = 101.0
+offset_bottom = -489.0
+text = "Quit To Menu"
+
+[node name="Button" parent="." instance=ExtResource("2_x11kv")]
+position = Vector2(105, -35)
+
+[node name="Drawbridge" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Drawbridge"]
+position = Vector2(1054, -101)
+scale = Vector2(3.21, 3.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawbridge"]
+position = Vector2(1043.63, -120)
+shape = SubResource("RectangleShape2D_qawjr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Drawbridge"]
+libraries = {
+"": SubResource("AnimationLibrary_00jrn")
+}
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_uuy18")]
+position = Vector2(-26, -81)
+
+[node name="Coin" parent="." instance=ExtResource("4_hp4t6")]
+position = Vector2(258, -77)
+
+[node name="Dirtplatform" parent="." instance=ExtResource("5_l4dql")]
+position = Vector2(-50, 22)
+
+[node name="Dirtplatform" parent="Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("5_l4dql")]
+position = Vector2(100, 0)
+
+[node name="Bliss(windowsXp)" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(476, -251)
+scale = Vector2(3.82, 2.6888)
+texture = ExtResource("6_nwa2x")
+
+[connection signal="pressed" from="Menu Button" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_2_body_entered"]
