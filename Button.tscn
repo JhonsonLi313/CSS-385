@@ -1,12 +1,15 @@
+
 [gd_scene load_steps=5 format=3 uid="uid://dupciv7iu2nyp"]
 
 [ext_resource type="Texture2D" uid="uid://ckicmjml44i68" path="res://button (1).png" id="1_j1t28"]
 [ext_resource type="Texture2D" uid="uid://c8re1p33jfvj4" path="res://buttonpressed (1).png" id="2_tqnxa"]
 
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pymg3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+
 "texture": ExtResource("1_j1t28")
 }, {
 "duration": 1.0,

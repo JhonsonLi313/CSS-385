@@ -1,5 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://be6351cw4i83d"]
 
+
 [ext_resource type="Script" path="res://Player.gd" id="1_l5vs0"]
 [ext_resource type="Texture2D" uid="uid://cram3ytol3uaq" path="res://temp-character.png" id="2_gr4if"]
 
@@ -10,6 +11,7 @@ size = Vector2(100, 100)
 script = ExtResource("1_l5vs0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
 texture = ExtResource("2_gr4if")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
