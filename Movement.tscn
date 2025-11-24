@@ -1,77 +1,125 @@
-[gd_scene load_steps=6 format=3 uid="uid://b82uoqtl77pce"]
+[gd_scene load_steps=11 format=3 uid="uid://b82uoqtl77pce"]
 
-[ext_resource type="PackedScene" uid="uid://ceomi4kf23uda" path="res://platforms.tscn" id="1_23xw5"]
-[ext_resource type="Script" uid="uid://bayp81j0vh576" path="res://movement.gd" id="1_hcjoj"]
-[ext_resource type="Texture2D" uid="uid://dvupdsw5grgtu" path="res://icon.svg" id="3_fnv8k"]
+[ext_resource type="Script" path="res://movement.gd" id="1_hcjoj"]
+[ext_resource type="PackedScene" uid="uid://60jck7iffb6t" path="res://Button.tscn" id="4_ptxpm"]
+[ext_resource type="Texture2D" uid="uid://yn10ehvdeg2y" path="res://Drawbridge.png" id="5_hnpmp"]
+[ext_resource type="PackedScene" uid="uid://be6351cw4i83d" path="res://Character.tscn" id="5_honej"]
 
-[sub_resource type="GDScript" id="GDScript_vcyby"]
-resource_name = "PlayerMovement"
-script/source = "extends CharacterBody2D
+[ext_resource type="PackedScene" uid="uid://c3eeobph8fnk1" path="res://dirtplatform.tscn" id="6_0s656"]
+[ext_resource type="PackedScene" uid="uid://ds707bb82w107" path="res://coin.tscn" id="6_4x6fl"]
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-var jumps = 0
-const MAX_JUMP = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qawjr"]
+size = Vector2(12.75, 187)
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+[sub_resource type="Animation" id="Animation_gbr2p"]
+resource_name = "Fall Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.56905]
+}
 
-	if is_on_floor():
-		jumps = 0
-	if Input.is_action_just_pressed(\"ui_jump\") and jumps < MAX_JUMP:
-		velocity.y = JUMP_VELOCITY
-		jumps += 1
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+[sub_resource type="Animation" id="Animation_wiy7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-	move_and_slide()
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ljl2"]
-size = Vector2(125, 126)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00jrn"]
+_data = {
+"Fall Down": SubResource("Animation_gbr2p"),
+"RESET": SubResource("Animation_wiy7s")
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(100, 577)
 script = ExtResource("1_hcjoj")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("1_23xw5")]
-position = Vector2(-37, -12)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("1_23xw5")]
-position = Vector2(257, -73)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("1_23xw5")]
-position = Vector2(549, -137)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("1_23xw5")]
-position = Vector2(841, -223)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = SubResource("GDScript_vcyby")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(59, -168)
-texture = ExtResource("3_fnv8k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(59.5, -167)
-shape = SubResource("RectangleShape2D_6ljl2")
-
-[node name="Button" type="Button" parent="."]
+[node name="Menu Button" type="Button" parent="."]
 offset_left = -79.0
 offset_top = -559.0
 offset_right = 101.0
 offset_bottom = -489.0
 text = "Quit To Menu"
 
-[connection signal="pressed" from="Button" to="." method="_on_quit_to_menu_pressed"]
+[node name="Button" parent="." instance=ExtResource("4_ptxpm")]
+position = Vector2(105, -35)
+
+[node name="Drawbridge" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Drawbridge"]
+position = Vector2(1054, -101)
+scale = Vector2(3.21, 3.84)
+texture = ExtResource("5_hnpmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawbridge"]
+position = Vector2(1043.63, -120)
+shape = SubResource("RectangleShape2D_qawjr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Drawbridge"]
+libraries = {
+"": SubResource("AnimationLibrary_00jrn")
+}
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_honej")]
+position = Vector2(-26, -81)
+
+[node name="Coin" parent="." instance=ExtResource("6_4x6fl")]
+position = Vector2(258, -77)
+
+[node name="Dirtplatform" parent="." instance=ExtResource("6_0s656")]
+position = Vector2(-50, 22)
+
+[node name="Dirtplatform" parent="Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[node name="Dirtplatform" parent="Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform/Dirtplatform" instance=ExtResource("6_0s656")]
+position = Vector2(100, 0)
+
+[connection signal="pressed" from="Menu Button" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_2_body_entered"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]

@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_quit_to_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
+func _on_button_body_entered(body: Node2D):
+	if $Button/AnimatedSprite2D.frame == 0:
+		$Button/AnimatedSprite2D.frame = 1
+		$Drawbridge/AnimationPlayer.play("Fall Down")
