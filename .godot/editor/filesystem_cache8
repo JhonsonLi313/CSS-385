@@ -1,0 +1,21 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1761534601
+button.png::CompressedTexture2D::1272000104610149185::1760334158::1760408601::1::::<><>::
+Button.tscn::PackedScene::2228014196190812845::1761532252::0::1::::<><>::uid://sefwkg057wkv::::res://button.png<>uid://714w8oi4pync::::res://buttonpressed.png
+buttonpressed.png::CompressedTexture2D::2301518653579397092::1760334158::1760408601::1::::<><>::
+Character.tscn::PackedScene::2732926787971090703::1761533520::0::1::::<><>::res://Player.gd<>uid://cram3ytol3uaq::::res://temp-character.png
+coin.gd::GDScript::-1::1760334158::0::1::::<>Area2D<>::
+Coin.png::CompressedTexture2D::70909112661944518::1760334158::1760408601::1::::<><>::
+coin.tscn::PackedScene::8490296450522417434::1761532253::0::1::::<><>::uid://bal4lktjbdni::::res://Coin.png<>res://coin.gd
+dirt platforms.png::CompressedTexture2D::3608259569097056597::1761534601::1761534601::1::::<><>::
+Drawbridge.png::CompressedTexture2D::1712992666640454262::1760334158::1760408601::1::::<><>::
+level2.tscn::PackedScene::8835846411464069901::1760334158::0::1::::<><>::uid://ceomi4kf23uda::::res://platforms.tscn<>uid://be6351cw4i83d::::res://Character.tscn<>uid://ds707bb82w107::::res://coin.tscn<>uid://bal4lktjbdni::::res://Coin.png
+main_menu.tscn::PackedScene::6236381862332947774::1760334158::0::1::::<><>::uid://b46j8tabp8dw4::::res://images.jpg<>res://main_menu.gd<>uid://d0ne8xoc2is2a::::res://Scabber-q2Mn0.ttf
+movement.gd::GDScript::-1::1760334158::0::1::::<>Node2D<>::
+Movement.tscn::PackedScene::4759630934346495268::1760334158::0::1::::<><>::uid://ceomi4kf23uda::::res://platforms.tscn<>res://movement.gd<>uid://60jck7iffb6t::::res://Button.tscn<>uid://yn10ehvdeg2y::::res://Drawbridge.png<>uid://be6351cw4i83d::::res://Character.tscn<>uid://ds707bb82w107::::res://coin.tscn
+Options.tscn::PackedScene::4890246674941144629::1761532253::0::1::::<><>::res://options.gd
+Player.gd::GDScript::-1::1760334158::0::1::::<>CharacterBody2D<>::
+README.md::TextFile::-1::1759097594::0::1::::<><>::
+options.gd::GDScript::-1::1761532213::0::1::::<>Control<>::
+Score.tscn::PackedScene::190709944421112060::1761532253::0::1::::<><>::
+temp-character.png::CompressedTexture2D::5966831605938893936::1761533447::1761533448::1::::<><>::
