@@ -1,19 +1,35 @@
-[gd_scene format=3 uid="uid://cym72pjnqp13"]
+[gd_scene load_steps=3 format=3 uid="uid://cdg716o0c3tj3"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" path="res://score.gd" id="1_blawp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0sfw"]
+bg_color = Color(0.6, 0.6, 0.6, 0.172549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Score" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_blawp")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 287.0
 offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0sfw")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 289.0
-offset_bottom = 48.0
+offset_left = 9.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SCORE:"

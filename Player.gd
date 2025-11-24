@@ -1,10 +1,42 @@
 extends CharacterBody2D
 
+signal update_ui(position)
+
 const SPEED = 300.0
-const JUMP_VELOCITY = -800.0
+
+const JUMP_VELOCITY = -500.0
 var jumps = 0
 const MAX_JUMP = 2
 
+var save_file_path = "user://save/"
+var save_file_name = "PlayerSave.tres"
+var playerData = PlayerData.new()
+
+func _process(delta):
+	if Input.is_action_just_pressed("save"):
+		save()
+	if Input.is_action_just_pressed("load"):
+		load_data()
+	emit_signal("update_ui", self.position)
+	playerData.UpdatePos(self.position)
+	
+func on_start_load():
+	self.position = playerData.SavePos
+
+func load_data():
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	on_start_load()
+	print("loaded")
+func save():
+	ResourceSaver.save(playerData, save_file_path + save_file_name)
+	print("save")
+
+
+func _ready():
+	verify_save_directory(save_file_path)
+	
+func verify_save_directory(path: String):
+	DirAccess.make_dir_absolute(path)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,6 +58,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	
+func _on_visible_on_screen_notifier_2d_screen_exited():
 	get_tree().change_scene_to_file("res://level2.tscn")

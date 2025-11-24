@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu37kevsjrtkg"]
+[gd_scene load_steps=5 format=3 uid="uid://c5qxoaf23sqlu"]
 
-[ext_resource type="Texture2D" uid="uid://b46j8tabp8dw4" path="res://images.jpg" id="1_7vrkn"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_fu7sn"]
-[ext_resource type="FontFile" uid="uid://d0ne8xoc2is2a" path="res://Scabber-q2Mn0.ttf" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://b2jus0bvsuyji" path="res://images (1).jpg" id="2_1tsdo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
-texture = ExtResource("1_7vrkn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(0.322743, 0.674298, 0.584237, 1)
@@ -41,18 +39,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -358.0
-offset_top = -206.0
-offset_right = 358.0
-offset_bottom = -116.0
+offset_left = -127.0
+offset_top = -209.0
+offset_right = 150.0
+offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.915672, 0.37649, 0.702993, 1)
 theme_override_colors/font_shadow_color = Color(0.523818, 0.148148, 0.455658, 0)
 theme_override_constants/shadow_offset_y = 10
-theme_override_fonts/font = ExtResource("2_fu7sn")
 theme_override_font_sizes/font_size = 70
-text = "Generic Platformer"
+text = "FlipSide"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -93,7 +90,13 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/Start Game Button" to="." method="_on_start_game_pressed"]
+[node name="Images(1)" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(576.25, 322.75)
+scale = Vector2(4.17273, 3.51093)
+texture = ExtResource("2_1tsdo")
+
 [connection signal="pressed" from="VBoxContainer/Start Game Button" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start Game Button" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options Button" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit Button" to="." method="_on_exit_pressed"]

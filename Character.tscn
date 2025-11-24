@@ -1,23 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://be6351cw4i83d"]
 
-[ext_resource type="Texture2D" uid="uid://dvupdsw5grgtu" path="res://icon.svg" id="1_ben16"]
+
 [ext_resource type="Script" path="res://Player.gd" id="1_l5vs0"]
+[ext_resource type="Texture2D" uid="uid://cram3ytol3uaq" path="res://temp-character.png" id="2_gr4if"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2keqv"]
-size = Vector2(126, 126)
+size = Vector2(100, 100)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_l5vs0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ben16")
+
+texture = ExtResource("2_gr4if")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_2keqv")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(5.65, 5.7)
+position = Vector2(1.43051e-06, 0.5)
+scale = Vector2(5, 5.05)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
