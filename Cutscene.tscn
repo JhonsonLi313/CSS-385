@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://coj5pkcmayhqo"]
+
+[ext_resource type="VideoStream" uid="uid://chlkohhitb8lp" path="res://Toast falling over - 桌勳 (1080p, h264).ogv" id="1_ir24y"]
+[ext_resource type="AudioStream" uid="uid://dnp2p5wmxrk2c" path="res://hyper-garden-jungle-breakbeat-drum-and-bass-loop-edit-356528.ogg" id="2_dl562"]
+
+[node name="Cutscene" type="CanvasLayer"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_ir24y")
+
+[node name="cutscene_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dl562")
