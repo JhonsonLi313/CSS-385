@@ -60,4 +60,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	get_tree().change_scene_to_file("res://level2.tscn")
+	var current_scene = get_tree().current_scene.scene_file_path
+	if current_scene == "res://level1.tscn":
+		get_tree().change_scene_to_file("res://level2.tscn")
+	elif current_scene == "res://level2.tscn":
+		get_tree().change_scene_to_file("res://level3.tscn")
+	elif current_scene == "res://level3.tscn":
+		get_tree().change_scene_to_file("res://level4.tscn")
+	elif current_scene == "res://level4.tscn":
+		get_tree().change_scene_to_file("res://level5.tscn")
+	elif current_scene == "res://level5.tscn":
+		get_tree().change_scene_to_file("res://level6.tscn")

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 res://Score.tscn
 res://node_2d.gd
 res://Options.tscn
@@ -26,3 +27,8 @@ res://level1.1.tscn
 res://level1.gd
 res://level_2.1.gd
 res://level_1.1.gd
+=======
+res://Cutscene.tscn
+res://level_2.gd
+res://level2.tscn
+>>>>>>> Stashed changes

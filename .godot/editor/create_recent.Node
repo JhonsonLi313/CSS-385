@@ -1,7 +1,14 @@
-Node2D
-Label
+<<<<<<< Updated upstream
+=======
 TileMapLayer
 TileMap
+AudioStreamPlayer2D
+VideoStreamPlayer
+CanvasLayer
+Node
+>>>>>>> Stashed changes
+Node2D
+Label
 Sprite2D
 Timer
 CharacterBody2D
