@@ -16,7 +16,10 @@ func switch_realm():
 		$Layer2.visible = false
 		current_layer = 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 		
 func _on_button_body_entered(body: Node2D):
 	if $Button/AnimatedSprite2D.frame == 0:
@@ -56,4 +59,7 @@ func _on_cutscene_finished(cutscene, music_player):
 
 func _on_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

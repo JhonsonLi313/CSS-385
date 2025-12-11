@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 config/name="CSS 385"
 
+=======
+config/name="Flipside"
+>>>>>>> Stashed changes
 =======
 config/name="Flipside"
 >>>>>>> Stashed changes
@@ -58,8 +62,12 @@ save={
 ]
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 Switch={
+=======
+Swap={
+>>>>>>> Stashed changes
 =======
 Swap={
 >>>>>>> Stashed changes
