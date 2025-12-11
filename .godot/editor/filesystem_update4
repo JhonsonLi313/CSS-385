@@ -1,40 +1,9 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-res://Score.tscn
-res://node_2d.gd
-res://Options.tscn
-res://dirtplatform.tscn
-res://Character.tscn
-res://level2.tscn
-res://Movement.tscn
-res://Button.tscn
-res://coin.tscn
-res://main_menu.tscn
-res://Splashscreen.tscn
-res://splashtimer.gd
-res://Splashscreen.gd
-res://control.tscn
-res://control.gd
-res://options.gd
-res://level1.tscn
-res://Player.gd
-res://main_menu.gd
-res://global.gd
-res://score.gd
-res://coin.gd
+res://Cutscene.tscn
 res://level_2.gd
-res://level2.1.tscn
-res://level1.1.tscn
+res://level2.tscn
 res://level1.gd
-res://level_2.1.gd
-res://level_1.1.gd
-=======
-res://Cutscene.tscn
-res://level_2.gd
-res://level2.tscn
->>>>>>> Stashed changes
-=======
-res://Cutscene.tscn
-res://level_2.gd
-res://level2.tscn
->>>>>>> Stashed changes
+res://level_3.gd
+res://level_4.gd
+res://level_5.gd
+res://level_6.gd
+res://Player.gd

@@ -17,7 +17,10 @@ func switch_realm():
 		current_layer = 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 		
@@ -60,6 +63,9 @@ func _on_cutscene_finished(cutscene, music_player):
 func _on_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
