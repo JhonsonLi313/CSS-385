@@ -1,9 +1,12 @@
 res://Cutscene.tscn
 res://level_2.gd
 res://level2.tscn
+<<<<<<< Updated upstream
 res://level1.gd
 res://level_3.gd
 res://level_4.gd
 res://level_5.gd
 res://level_6.gd
 res://Player.gd
+=======
+>>>>>>> Stashed changes
